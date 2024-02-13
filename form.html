@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+        <form id="form"  onsubmit="return valid()">
+            <h1>Student Registration</h1>
+            <div class="input-control">
+                <label for="firstname">Firstname</label>
+                <input id="firstname" name="firstname" type="text">
+            
+            </div>
+            <div class="input-control">
+                <label for="lastname">Lastname</label>
+                <input id="lastname" name="lastname" type="text">
+             
+            </div>
+            <div class="input-control">
+                <label for="dob">DOB</label>
+                <input id="dob" name="dob" type="date">
+               
+            </div>
+            <div class="input-control">
+                <label for="gender">Gender</label>
+                <select id="gender">
+                <option></option>
+                <option value="gender">Male</option>
+                <option value="gender">Female</option>
+            </select>
+        </div>
+
+            <div class="input-control">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email">
+               
+            </div>
+            
+            
+               
+        
+            <div class="input-control">
+                <label for="address">Address</label>
+                <input id="address" name="address" type="text">
+              
+            </div>
+            <div class="input-control">
+                <label for="phonenumber">Phone number</label>
+                <input id="phonenumber"name="phonenumber" type="text">
+               
+           
+            <button type="submit">Submit</button>
+           
+            </div>
+                            </form>
+
+    
+    <script>
+    function valid(){
+  
+var fname = document.getElementById('firstname').value;
+var lname = document.getElementById('lastname').value;
+var dob = document.getElementById('dob').value;
+var gender = document.getElementById('gender').value;
+var address = document.getElementById('address').value;
+var pnumber = document.getElementById('phonenumber').value;
+var email = document.getElementById('email').value;
+ 
+    if(fname == ""|| lname ==""||address ==""||pnumber ==""||address ==""||email ==""||dob==""||gender=="") {
+       alert("all fields are required");
+       return false;
+    } 
+  else if(pnumber.length < 10 || pnumber.length >10) {
+        alert("Phone number must be 10 digits");
+    }
+    else if (isNaN(pnumber)) {
+        alert("Only numbers allowed");
+    }
+    else{
+        true;
+        alert("form submitted");
+    }
+ 
+
+
+};
+</script>
+
+
+</body>
+
+
+</html>
